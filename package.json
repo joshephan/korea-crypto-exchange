@@ -1,6 +1,6 @@
 {
   "name": "korea-crypto-exchange",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "한국의 주요 암호화폐 거래소(업비트, 빗썸) API를 쉽게 구현할 수 있도록 도와주는 TypeScript 라이브러리",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
