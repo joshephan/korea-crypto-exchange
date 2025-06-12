@@ -1,0 +1,57 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# TypeScript Coding Guidelines (.mdc)
+
+This document defines the TypeScript conventions and architectural constraints for this project.
+
+---
+
+## 🔤 Naming Conventions
+
+- **File Names**:  
+  Use `kebab-case` for files and folders  
+  ✅ `exchange-facade.ts`  
+  ❌ `ExchangeFacade.ts`
+
+- **Interfaces**:  
+  Start with `I` only for external/public contracts  
+  ✅ `IExchangeAPI` (external)  
+  ❌ `ExchangeFacadeInterface`
+
+- **Type Aliases**:  
+  Use PascalCase  
+  ✅ `type TradeType = 'buy' | 'sell';`
+
+- **Functions & Methods**:  
+  Use camelCase  
+  ✅ `placeOrder()`, `getQuotation()`
+
+- **Constants**:  
+  Use UPPER_SNAKE_CASE  
+  ✅ `DEFAULT_TIMEOUT`
+
+---
+
+## 🧱 Project Structure Rules
+
+- Each `exchange` folder (`upbit`, `bithumb`) must expose:
+  - `quotation.ts`
+  - `websocket.ts`
+  - `exchange.ts`
+  - `index.ts` for unified export
+
+- All `strategy` modules must implement `TradeStrategy` interface
+
+- The `facade/ExchangeFacade.ts` must depend only on `core` and `strategies`
+
+---
+
+## 🎯 Type Rules
+
+- Always prefer **explicit types** over inference in function signatures
+  ```ts
+  // Good
+  const getPrice = (symbol: string): Promise<number> => { ... }
