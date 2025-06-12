@@ -2,10 +2,7 @@
 
 ## 한국 암호화폐 거래소 API 통합 라이브러리
 
-<div style="display: flex; justify-content: center; gap: 20px;">
-  <img src="https://github.com/user-attachments/assets/36270157-e02b-4021-807c-a9a14c1b9461" width="200" alt="맛있는업비트김치">
-  <img src="https://github.com/user-attachments/assets/7441b41d-b2f8-4ffc-b5e7-cae0819298e3" width="200" alt="맛있는빗썸김치">
-</div>
+<img width="729" alt="스크린샷 2025-06-12 오후 10 26 54" src="https://github.com/user-attachments/assets/87fae58a-2b81-4586-ae96-1c55fa9cab0d" />
 
 한국의 주요 암호화폐 거래소(업비트, 빗썸) API를 쉽게 구현할 수 있도록 도와주는 TypeScript 라이브러리입니다. 거래소 API를 사용하기 위해서는 먼저 엑세스키와 비밀키를 발급받고, 스코프 조건에 따라 IP 허용 작업을 각 거래소 개발자 대시보드에서 설정해주셔야 정상 작동됩니다.
 
@@ -157,6 +154,11 @@ npm run build
 MIT License
 
 ## 기여하기
+
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="https://github.com/user-attachments/assets/36270157-e02b-4021-807c-a9a14c1b9461" width="200" alt="맛있는업비트김치">
+  <img src="https://github.com/user-attachments/assets/7441b41d-b2f8-4ffc-b5e7-cae0819298e3" width="200" alt="맛있는빗썸김치">
+</div>
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
