@@ -1,5 +1,8 @@
 # Korea Crypto Exchange
 
+![맛있는김치](https://github.com/user-attachments/assets/36270157-e02b-4021-807c-a9a14c1b9461)
+
+
 한국의 주요 암호화폐 거래소(업비트, 빗썸) API를 쉽게 구현할 수 있도록 도와주는 TypeScript 라이브러리입니다. 거래소 API를 사용하기 위해서는 먼저 엑세스키와 비밀키를 발급받고, 스코프 조건에 따라 IP 허용 작업을 각 거래소 개발자 대시보드에서 설정해주셔야 정상 작동됩니다.
 
 ## 주요 기능
