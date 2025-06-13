@@ -14,6 +14,7 @@
 - 시세 조회 API
   - 종목 코드 조회
   - 분봉/일봉/주봉/월봉/년봉 캔들 조회
+  - 초봉 캔들 조회
   - 최근 체결 내역 조회
   - 현재가 정보 조회
     - 종목 단위 현재가 정보
@@ -57,6 +58,39 @@
   - 출금 가능 정보
   - 출금 허용 주소 리스트 조회
   - 디지털 자산 출금 취소 접수
+
+### 빗썸 API 구현
+- 자산 조회 API
+  - 전체 계좌 조회
+- 시세 조회 API
+  - 종목 코드 조회
+  - 분봉/일봉/주봉/월봉 캔들 조회
+  - 최근 체결 내역 조회
+  - 현재가 정보 조회
+  - 호가 정보 조회
+  - 시장 경고 정보 조회
+- 주문 API
+  - 주문 가능 정보
+  - 개별 주문 조회
+  - 주문 리스트 조회
+  - 주문 취소
+- 입금 API
+  - 원화 입금 내역 조회
+  - 개별 입금 조회
+  - 입금 주소 생성
+  - 전체 입금 주소 조회
+  - 개별 입금 주소 조회
+  - 원화 입금하기
+- 서비스 정보 API
+  - 입출금 현황
+  - API 키 리스트 조회
+- 출금 API
+  - 디지털 자산 출금하기
+  - 원화 출금하기
+  - 출금 내역 조회
+  - 원화 출금 내역 조회
+  - 출금 가능 정보
+  - 출금 허용 주소 리스트 조회
 
 ## 설치 방법
 
@@ -117,6 +151,61 @@ const dayCandles = await exchange.getDayCandles({
   market: 'KRW-BTC',
   count: 200
 });
+```
+
+### 빗썸 API 사용하기
+
+```typescript
+import { KoreaCryptoExchange, ExchangeType } from 'korea-crypto-exchange';
+
+// 거래소 인스턴스 생성
+const exchange = new KoreaCryptoExchange({
+  type: ExchangeType.BITHUMB,
+  accessKey: 'YOUR_ACCESS_KEY',
+  secretKey: 'YOUR_SECRET_KEY'
+});
+
+// 현재가 정보 조회
+const tickers = await exchange.getTickers({
+  markets: 'BTC,ETH'
+});
+
+// 호가 정보 조회
+const orderbook = await exchange.getOrderbook({
+  markets: 'BTC'
+});
+
+// 주문하기
+const order = await exchange.placeOrder({
+  market: 'BTC',
+  side: 'bid',
+  volume: '0.1',
+  price: '50000000',
+  ord_type: 'limit'
+});
+
+// 주문 상세 조회
+const orderDetail = await exchange.getOrderDetail({
+  order_id: 'order-id'
+});
+
+// 계좌 정보 조회
+const accounts = await exchange.getAccounts();
+
+// 분봉 데이터 조회
+const minuteCandles = await exchange.getMinuteCandles(1, {
+  market: 'BTC',
+  count: 200
+});
+
+// 일봉 데이터 조회
+const dayCandles = await exchange.getDayCandles({
+  market: 'BTC',
+  count: 200
+});
+
+// 시장 경고 정보 조회
+const marketWarnings = await exchange.getMarketWarnings();
 ```
 
 ## 개발 환경 설정
